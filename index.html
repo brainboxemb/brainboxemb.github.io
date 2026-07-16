@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Brainbox Embedded</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -14,124 +14,207 @@
         body {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px 60px;
+            padding: 30px 20px 60px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #0b3154;
-            background: #f7faf9;
+            background: #ffffff;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
         .logo {
             display: block;
             width: 100%;
-            max-width: 500px;
+            max-width: 275px;
             height: auto;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
         }
 
         .intro {
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
-            color: #536471;
-            font-size: 1.05rem;
+            color: #596874;
+            font-size: 1rem;
         }
 
-        h2 {
-            margin: 0 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #13a675;
-            font-size: 1.8rem;
+        main {
+            border-top: 1px solid #d7e0e5;
+            padding-top: 30px;
         }
 
-        h3 {
-            margin: 30px 0 12px;
-            font-size: 1.2rem;
+        .category {
+            margin-bottom: 40px;
         }
 
-        .project-list {
+        .category-title {
+            margin: 0 0 12px;
+            font-size: 1.4rem;
+            color: #0b3154;
+        }
+
+        .link-list {
             margin: 0;
             padding: 0;
             list-style: none;
+            border-top: 1px solid #d7e0e5;
         }
 
-        .project {
-            margin-bottom: 16px;
-            padding: 20px;
-            text-align: left;
-            background: #ffffff;
-            border: 1px solid #dce6e2;
-            border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(11, 49, 84, 0.06);
+        .link-item {
+            border-bottom: 1px solid #d7e0e5;
         }
 
-        .project a {
-            display: inline-block;
-            margin-bottom: 4px;
-            color: #0b5f9e;
-            font-size: 1.1rem;
-            font-weight: 700;
+        .link-item a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 10px;
             text-decoration: none;
+            color: inherit;
+            transition: background-color 0.15s ease;
         }
 
-        .project a:hover,
-        .project a:focus {
-            color: #13a675;
-            text-decoration: underline;
+        .link-item a:hover {
+            background-color: #f6fbf9;
+        }
+
+        .bullet {
+            flex: 0 0 auto;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #12a875;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            display: block;
+            color: #125fc6;
+            font-size: 1.05rem;
+            font-weight: 700;
         }
 
         .description {
-            color: #66757f;
+            display: block;
+            margin-top: 3px;
+            color: #596874;
+            font-size: 0.95rem;
+        }
+
+        .arrow {
+            flex: 0 0 auto;
+            color: #12a875;
+            font-size: 1.5rem;
         }
 
         footer {
             margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #d7e0e5;
             text-align: center;
-            color: #7a8790;
+            color: #8a97a3;
             font-size: 0.9rem;
         }
+
     </style>
 </head>
 
 <body>
+
     <header class="header">
+
         <img
             src="logo.png"
-            alt="Brainbox Embedded logo"
-            class="logo"
-        >
+            alt="Brainbox Embedded Logo"
+            class="logo">
 
         <p class="intro">
-            Welcome! This page contains links to my projects and websites.
+            Welcome! This page contains links to my projects, experiments and notes.
         </p>
+
     </header>
 
     <main>
-        <h2>Projects</h2>
 
-        <section>
-            <h3>Learning Hugo</h3>
+        <section class="category">
 
-            <ul class="project-list">
-                <li class="project">
-                    <a href="https://brainboxemb.github.io/side.hugo-step001/">
-                        Hugo Step 1
+            <h2 class="category-title">
+                Learning Hugo
+            </h2>
+
+            <ul class="link-list">
+
+                <li class="link-item">
+                    <a href="https://brainboxemb.github.io/site-hugo-step001/">
+
+                        <span class="bullet"></span>
+
+                        <span class="link-content">
+                            <span class="link-title">
+                                Hugo Step 1
+                            </span>
+
+                            <span class="description">
+                                A simple Hugo site with blog posts.
+                            </span>
+                        </span>
+
+                        <span class="arrow">→</span>
+
                     </a>
-
-                    <div class="description">
-                        A simple Hugo site with blog posts.
-                    </div>
                 </li>
+
+                <!-- Add Hugo Step 2 here -->
+
             </ul>
+
         </section>
+
+
+        <section class="category">
+
+            <h2 class="category-title">
+                Embedded Projects
+            </h2>
+
+            <ul class="link-list">
+
+                <li class="link-item">
+                    <a href="#">
+
+                        <span class="bullet"></span>
+
+                        <span class="link-content">
+                            <span class="link-title">
+                                Coming Soon
+                            </span>
+
+                            <span class="description">
+                                Future embedded systems projects.
+                            </span>
+                        </span>
+
+                        <span class="arrow">→</span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+
     </main>
 
+
     <footer>
-        Brainbox Embedded
+        © 2026 Brainbox Embedded
     </footer>
+
 </body>
 </html>
