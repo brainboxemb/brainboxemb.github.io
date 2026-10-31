@@ -62,3 +62,27 @@
     padding-bottom: 24px;
   }
 }
+
+/* Align the landing page with the centered, fixed-width Hugo Notes layout.
+   Keep the original artwork's 3:1 proportions without cropping its text or brain. */
+body { background: #f2f5f6; }
+.page-frame {
+  width: 100%;
+  max-width: 1080px;
+  margin: 25px auto;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(11, 49, 84, .12);
+}
+.page-frame .shell {
+  width: calc(100% - 60px);
+  max-width: 1020px;
+}
+@media screen and (max-width: 1475px) {
+  .page-frame { width: 95%; }
+}
+@media screen and (max-width: 900px) {
+  .page-frame { width: 100%; margin: 0 auto; box-shadow: none; }
+}
+@media screen and (max-width: 480px) {
+  .page-frame .shell { width: calc(100% - 32px); }
+}
