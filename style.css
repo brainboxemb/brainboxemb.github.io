@@ -12,3 +12,53 @@
 @media(max-width:760px){.hero{grid-template-columns:1fr}.hero__graphic{display:none}.brandline__label{display:none}.feature{grid-template-columns:1fr}.feature__art{min-height:180px}.feature__body{padding:26px}.main{padding-top:40px}.other-sites{margin-top:55px}}
 @media(max-width:480px){.shell{width:calc(100% - 32px)}.brand__symbol{width:56px;height:56px}.brand__name{font-size:1.62rem}.brand__motto{font-size:.65rem}.hero{min-height:auto;padding:45px 0 50px}.hero h1{font-size:2.7rem}.hero__intro{font-size:.96rem}.feature__body h3{font-size:1.8rem}.footer__inner{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.feature{transition:none}}
+
+/* 2026-10-31 — use the complete brain + electronics artwork as the site banner.
+   Its wordmark and tagline are part of the artwork: do not put a second logo
+   or heading over it. Preserve the original aspect ratio at all widths. */
+.masthead {
+  background: #04172e;
+  border-top: 0;
+  border-bottom: 3px solid var(--green);
+}
+.masthead::before { content: none; }
+.masthead__art { width: 100%; background: #04172e; }
+.masthead__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero-summary {
+  background: linear-gradient(100deg,#061c34 0%,#0a3054 100%);
+  border-top: 1px solid #3bc0da46;
+}
+.hero-summary__inner {
+  display: grid;
+  grid-template-columns: minmax(260px,.9fr) minmax(0,1.1fr);
+  gap: 32px;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 27px;
+}
+.hero-summary .eyebrow { margin-bottom: 7px; }
+.hero-summary h1 {
+  color: white;
+  font-size: clamp(1.55rem,2.8vw,2.15rem);
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+.hero-summary__intro {
+  color: #c5dbe6;
+  font-size: .96rem;
+  line-height: 1.65;
+  margin: 0;
+}
+@media(max-width:760px) {
+  .hero-summary__inner {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding-top: 22px;
+    padding-bottom: 24px;
+  }
+}
