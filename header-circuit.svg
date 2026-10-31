@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" aria-hidden="true">
+  <!--
+    Decorative PCB pattern for the site header.
+    Keep the left side intentionally quiet for the site title.
+  -->
+
+  <g fill="none" stroke="#2686a2" stroke-width="4" opacity=".78"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M455 34h150l34 34h126"/>
+    <path d="M510 72h112l30 30h155"/>
+    <path d="M472 142h168l38-38h136"/>
+    <path d="M615 20l58 58h92l34 34h118"/>
+    <path d="M665 158l54-54h110l42-42h85"/>
+    <path d="M775 18l44 44h82"/>
+    <path d="M836 18v30l28 28h66"/>
+    <path d="M1070 18v28l-30 30v78"/>
+  </g>
+
+  <g fill="#35b6b2" opacity=".9">
+    <circle cx="455" cy="34" r="6"/>
+    <circle cx="510" cy="72" r="6"/>
+    <circle cx="472" cy="142" r="6"/>
+    <circle cx="615" cy="20" r="6"/>
+    <circle cx="665" cy="158" r="6"/>
+    <circle cx="775" cy="18" r="6"/>
+    <circle cx="836" cy="18" r="6"/>
+    <circle cx="765" cy="68" r="5"/>
+    <circle cx="807" cy="102" r="5"/>
+    <circle cx="956" cy="62" r="5"/>
+  </g>
+
+  <!-- Small component pads -->
+  <g fill="#4fd0b6" opacity=".82">
+    <rect x="705" y="42" width="24" height="9" rx="3"/>
+    <rect x="740" y="118" width="26" height="9" rx="3"/>
+    <rect x="875" y="84" width="24" height="9" rx="3"/>
+    <rect x="905" y="118" width="24" height="9" rx="3"/>
+  </g>
+
+  <!-- Main IC on the far right -->
+  <g transform="translate(950 38)" opacity=".9">
+    <rect x="0" y="0" width="116" height="104" rx="9"
+          fill="none" stroke="#2aa9b2" stroke-width="5"/>
+
+    <g stroke="#2aa9b2" stroke-width="5" stroke-linecap="round">
+      <path d="M18 0V-14M42 0V-14M74 0V-14M98 0V-14"/>
+      <path d="M18 104v14M42 104v14M74 104v14M98 104v14"/>
+      <path d="M0 20h-14M0 44h-14M0 68h-14M0 92h-14"/>
+      <path d="M116 20h14M116 44h14M116 68h14M116 92h14"/>
+    </g>
+
+    <circle cx="88" cy="76" r="6" fill="#4fd0b6"/>
+  </g>
+
+  <!-- A few vias, spaced deliberately instead of clustered -->
+  <g fill="none" stroke="#45c7b5" stroke-width="4" opacity=".88">
+    <circle cx="690" cy="104" r="7"/>
+    <circle cx="820" cy="62" r="7"/>
+    <circle cx="905" cy="42" r="7"/>
+    <circle cx="1100" cy="84" r="7"/>
+  </g>
+</svg>

@@ -1,265 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brainbox Embedded</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px 20px 60px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.5;
-            color: #0b3154;
-            background: #ffffff;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .logo {
-            display: block;
-            width: 100%;
-            max-width: 275px;
-            height: auto;
-            margin: 0 auto 20px;
-        }
-
-        .intro {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #596874;
-            font-size: 1rem;
-        }
-
-        main {
-            border-top: 1px solid #d7e0e5;
-            padding-top: 30px;
-        }
-
-        .category {
-            margin-bottom: 40px;
-        }
-
-        .category-title {
-            margin: 0 0 12px;
-            font-size: 1.4rem;
-            color: #0b3154;
-        }
-
-        .link-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            border-top: 1px solid #d7e0e5;
-        }
-
-        .link-item {
-            border-bottom: 1px solid #d7e0e5;
-        }
-
-        .link-item a {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 10px;
-            text-decoration: none;
-            color: inherit;
-            transition: background-color 0.15s ease;
-        }
-
-        .link-item a:hover {
-            background-color: #f6fbf9;
-        }
-
-        .bullet {
-            flex: 0 0 auto;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #12a875;
-        }
-
-        .link-content {
-            flex: 1;
-        }
-
-        .link-title {
-            display: block;
-            color: #125fc6;
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-
-        .description {
-            display: block;
-            margin-top: 3px;
-            color: #596874;
-            font-size: 0.95rem;
-        }
-
-        .arrow {
-            flex: 0 0 auto;
-            color: #12a875;
-            font-size: 1.5rem;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #d7e0e5;
-            text-align: center;
-            color: #8a97a3;
-            font-size: 0.9rem;
-        }
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b30">
+  <meta name="description" content="brainboxemb — a home for technical projects, experiments and notes about embedded electronics, software and DIY.">
+  <title>brainboxemb — think. build. embed.</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <!-- The supplied Brainbox artwork already includes the wordmark and tagline. -->
+    <div class="masthead__art">
+      <img src="hero-brain.webp"
+           alt="brainboxemb — think. build. embed. A glowing brain linked to electronics, digital ideas and circuit traces."
+           width="2048" height="682">
+    </div>
+    <div class="hero-summary">
+      <div class="shell hero-summary__inner">
+        <div class="hero-summary__heading">
+          <p class="eyebrow eyebrow--light"><span class="glow-dot" aria-hidden="true"></span> ABOUT BRAINBOXEMB</p>
+          <h1>Ideas worth building.</h1>
+        </div>
+        <p class="hero-summary__intro">A personal home for technical ideas and practical experiments. From embedded electronics and software to 3D printing, CAD and workshop projects.</p>
+      </div>
+    </div>
+  </header>
 
-    <header class="header">
+  <main id="main" class="shell main">
+    <section class="main-site" aria-labelledby="notes-heading">
+      <div class="section-heading">
+        <p class="eyebrow">CONTINUE HERE</p>
+        <h2 id="notes-heading">Technical Notes</h2>
+      </div>
+      <a class="feature" href="/notes/" aria-label="Continue to Technical Notes">
+        <div class="feature__body">
+          <span class="feature__tag"><span class="mini-dot"></span> CURRENT WEBSITE · HUGO</span>
+          <h3>Projects, knowledge and discoveries.</h3>
+          <p>Explore my ongoing projects, technical reference notes and daily finds on the current website.</p>
+          <span class="feature__action">Continue to Technical Notes <span aria-hidden="true">→</span></span>
+        </div>
+        <div class="feature__art" aria-hidden="true">
+          <div class="window">
+            <span class="window__dots"><i></i><i></i><i></i></span>
+            <span class="window__title">brainboxemb / notes</span>
+            <div class="window__content">
+              <div class="window__nav"><span>Projects</span><span>Knowledge Base</span><span>Daily</span></div>
+              <div class="window__lines"><span></span><span></span><span></span></div>
+              <div class="window__tiles"><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
 
-        <img
-            src="logo_small.png"
-            alt="Brainbox Embedded Logo"
-            class="logo">
-
-        <p class="intro">
-            Welcome! This page contains links to my projects, experiments and notes.
-        </p>
-
-    </header>
-
-    <main>
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Knowledge Base
-            </h2>
-        
-            <ul class="link-list">
-                <li class="link-item">
-                    <a href="https://brainboxemb.github.io/notes/">
-                        <span class="bullet"></span>
-                        <span class="link-content">
-                            <span class="link-title">
-                                Technical Notes - Hugo
-                            </span>
-                            <span class="description">
-                                New Hugo-based knowledge base for technical notes and projects.
-                            </span>
-                        </span>
-                        <span class="arrow">→</span>
-                    </a>
-                </li>                
-                <li class="link-item">
-                    <a href="https://brainboxemb.github.io/site.notes/">
-                        <span class="bullet"></span>
-                        <span class="link-content">
-                            <span class="link-title">
-                                Technical Notes
-                            </span>
-                            <span class="description">
-                                Personal notes about 3D printing, embedded systems, software engineering and other technical topics.
-                            </span>
-                        </span>
-                        <span class="arrow">→</span>
-                    </a>
-                </li>
-            </ul>
-        
-        </section>
-        
-        <section class="category">
-
-            <h2 class="category-title">
-                Learning Hugo
-            </h2>
-
-            <ul class="link-list">
-
-                <li class="link-item">
-                    <a href="https://brainboxemb.github.io/site.hugo-step001/">
-                        <span class="bullet"></span>
-                        <span class="link-content">
-                            <span class="link-title">
-                                Hugo Step 1
-                            </span>
-                            <span class="description">
-                                A simple first hugo site with blog posts and using roadster theme.
-                            </span>
-                        </span>
-                        <span class="arrow">→</span>
-                    </a>
-                </li>
-
-                <li class="link-item">
-                    <a href="https://brainboxemb.github.io/site.hugo-step002/">
-                        <span class="bullet"></span>
-                        <span class="link-content">
-                            <span class="link-title">Hugo Step 2</span>
-                            <span class="description">
-                                A Hugo project template with project overview, navigation, logs, knowledge base and project areas.
-                            </span>
-                        </span>
-                        <span class="arrow">→</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </section>
-
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Embedded Projects
-            </h2>
-
-            <ul class="link-list">
-
-                <li class="link-item">
-                    <a href="#">
-
-                        <span class="bullet"></span>
-
-                        <span class="link-content">
-                            <span class="link-title">
-                                Coming Soon
-                            </span>
-
-                            <span class="description">
-                                Future embedded systems projects.
-                            </span>
-                        </span>
-
-                        <span class="arrow">→</span>
-
-                    </a>
-                </li>
-
-            </ul>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        © 2026 Brainbox Embedded
-    </footer>
-
+    <section class="other-sites" aria-labelledby="others-heading">
+      <div class="section-heading section-heading--compact">
+        <p class="eyebrow">OTHER WEBSITES</p>
+        <h2 id="others-heading">Earlier notes &amp; Hugo experiments</h2>
+        <p>Older material and steps along the way, kept available for reference.</p>
+      </div>
+      <div class="other-list">
+        <a href="/site.notes/" class="other-link"><span class="other-link__num">01</span><span class="other-link__copy"><strong>Technical Notes — original</strong><small>The earlier technical knowledge collection.</small></span><span class="other-link__arrow" aria-hidden="true">↗</span></a>
+        <a href="/site.hugo-step001/" class="other-link"><span class="other-link__num">02</span><span class="other-link__copy"><strong>Learning Hugo — Step 1</strong><small>My first Hugo site using the Roadster theme.</small></span><span class="other-link__arrow" aria-hidden="true">↗</span></a>
+        <a href="/site.hugo-step002/" class="other-link"><span class="other-link__num">03</span><span class="other-link__copy"><strong>Learning Hugo — Step 2</strong><small>A template for projects, navigation and technical notes.</small></span><span class="other-link__arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer__inner"><span>© 2026 brainboxemb</span><span>think. <b>build.</b> embed.</span></div></footer>
 </body>
 </html>
