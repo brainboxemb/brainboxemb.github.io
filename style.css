@@ -86,3 +86,72 @@ body { background: #f2f5f6; }
 @media screen and (max-width: 480px) {
   .page-frame .shell { width: calc(100% - 32px); }
 }
+
+
+/* Put the main Notes site and SolidCraft projects side by side. */
+.primary-links {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+.primary-links .feature {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(155px,1fr);
+  min-height: 0;
+}
+.primary-links .feature__body { min-height: 228px; }
+.primary-links .feature__art { min-height: 155px; }
+.solidcraft-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-top: 4px solid #37a9c7;
+  background: #fff;
+}
+.solidcraft-card__intro { padding: 23px 28px 14px; }
+.solidcraft-card__intro h3 {
+  font-size: clamp(1.32rem,2.15vw,1.76rem);
+  letter-spacing: -.035em;
+  line-height: 1.18;
+  margin: 10px 0 9px;
+}
+.solidcraft-card__intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+.solidcraft-links { display: flex; flex-direction: column; padding: 0 20px; }
+.solidcraft-links a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 10px;
+  padding: 11px 8px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.solidcraft-links a:first-child { border-top: 1px solid var(--line); }
+.solidcraft-links a:hover, .solidcraft-links a:focus-visible { background: #f2f9f8; }
+.solidcraft-links strong { font-size: .93rem; color: var(--navy); }
+.solidcraft-links small { grid-column: 1; font-size: .8rem; color: var(--muted); }
+.solidcraft-links a span { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--green); font-size: 1.2rem; }
+.solidcraft-card__pages {
+  margin: auto 28px 23px;
+  padding-top: 14px;
+  font-weight: 750;
+  font-size: .87rem;
+  color: #187f6e;
+  text-decoration: none;
+}
+.solidcraft-card__pages:hover { text-decoration: underline; }
+@media(max-width:760px) {
+  .primary-links { grid-template-columns: 1fr; }
+  .primary-links .feature { grid-template-columns: 1fr; }
+  .primary-links .feature__art { min-height: 155px; }
+}
+@media(max-width:480px) {
+  .solidcraft-card__intro { padding: 23px 24px 14px; }
+  .solidcraft-links { padding: 0 16px; }
+  .solidcraft-card__pages { margin-left: 24px; margin-right: 24px; }
+}
