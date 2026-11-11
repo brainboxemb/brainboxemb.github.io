@@ -89,132 +89,228 @@ body { background: #f2f5f6; }
 
 
 
-/* Shared destination-card system: the two sections use one visual rhythm. */
-.primary-links { display:flex; flex-direction:column; gap:24px; }
+
+/* Compact homepage destinations. At desktop width, each card aims for
+   ~220px: around 70% of the previous 315px treatment. Keep the
+   important links tappable without fixed clipping of their content. */
+.primary-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .destination-card {
-  display:grid;
-  grid-template-columns:minmax(0,54%) minmax(0,46%);
-  border:1px solid var(--line);
-  border-top:5px solid var(--green);
-  background:#fff;
-  min-height:365px;
-  overflow:hidden;
+  display: grid;
+  grid-template-columns: minmax(0,54%) minmax(0,46%);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green);
+  background: #fff;
+  min-height: 220px;
+  overflow: hidden;
 }
-.destination-card--solidcraft { border-top-color:#159dc0; }
-.destination-card__content { display:flex; flex-direction:column; min-width:0; padding:26px 30px 24px; }
+.destination-card--solidcraft { border-top-color: #159dc0; }
+.destination-card__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 13px 22px 15px;
+}
 .destination-card__tag {
-  margin:0 0 10px; color:#187f6e;
-  font-size:.72rem; font-weight:800; letter-spacing:.09em;
+  margin: 0 0 5px;
+  font-size: .62rem;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  font-weight: 800;
+  color: #187f6e;
 }
-.destination-card--solidcraft .destination-card__tag { color:#087c9b; }
-.destination-card h3 { margin:0 0 12px; font-size:clamp(1.7rem,2.8vw,2.2rem); letter-spacing:-.045em; line-height:1.18; color:var(--navy); }
-.destination-card__description { margin:0 0 22px; font-size:.95rem; color:var(--muted); max-width:460px; }
-.destination-links { display:flex; flex-direction:column; margin-top:auto; border-top:1px solid var(--line); }
-.destination-links a {
-  display:flex; gap:12px; align-items:center; text-decoration:none;
-  padding:12px 8px; border-bottom:1px solid var(--line); min-height:60px;
+.destination-card--solidcraft .destination-card__tag { color: #087c9b; }
+.destination-card h3 {
+  margin: 0 0 6px;
+  font-size: clamp(1.34rem,2.1vw,1.65rem);
+  letter-spacing: -.04em;
+  line-height: 1.18;
+  color: var(--navy);
 }
-.destination-links a:hover, .destination-links a:focus-visible { background:#f2f9f8; }
-.destination-links__icon { color:#178c77; font-size:1.35rem; font-weight:700; line-height:1; width:25px; text-align:center; }
-.destination-links__text { min-width:0; display:flex; flex-direction:column; flex:1; }
-.destination-links strong { font-size:.98rem; line-height:1.35; color:var(--navy); }
-.destination-links small { font-size:.82rem; color:var(--muted); line-height:1.35; }
-.destination-links__arrow { margin-left:auto; color:var(--green); font-size:1.25rem; }
-.destination-card__art { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; min-width:0; min-height:350px; }
+.destination-card__description {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.44;
+  max-width: 455px;
+}
+.notes-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: flex-start;
+  gap: 18px;
+  margin-top: auto;
+  padding: 9px 14px;
+  background: #168e76;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 750;
+  text-decoration: none;
+  line-height: 1.2;
+  min-height: 39px;
+}
+.notes-cta span { font-size: 1.15rem; line-height: 1; }
+.notes-cta:hover, .notes-cta:focus-visible { background: #126e5d; text-decoration: none; }
+.solidcraft-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  column-gap: 10px;
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+}
+.solidcraft-grid a {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 5px 20px 5px 6px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--line);
+  color: var(--navy);
+  text-decoration: none;
+}
+.solidcraft-grid a:first-child { border-right: 1px solid var(--line); }
+.solidcraft-grid a:hover, .solidcraft-grid a:focus-visible { background: #f2f9f8; }
+.solidcraft-grid strong { font-size: .85rem; line-height: 1.3; }
+.solidcraft-grid small { font-size: .72rem; line-height: 1.3; color: var(--muted); }
+.solidcraft-grid a span {
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  color: var(--green);
+  font-size: 1rem;
+  line-height: 1;
+}
+.solidcraft-grid .solidcraft-grid__wide { grid-column: 1 / -1; }
+.destination-card__art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 220px;
+  overflow: hidden;
+}
 .destination-card__art--notes {
   background: radial-gradient(ellipse at 70% 30%,#184b69 0,#082c48 62%,#041a30 100%);
 }
 .destination-card__art--notes::before {
-  content:""; position:absolute; inset:0; opacity:.3; pointer-events:none;
-  background:url('header-circuit.svg') center/cover no-repeat;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .3;
+  pointer-events: none;
+  background: url('header-circuit.svg') center/cover no-repeat;
 }
 .notes-preview {
-  position:relative; width:91%; max-width:460px;
-  background:#f4f8fb; border:1px solid #7ba4b7;
-  box-shadow:0 18px 35px rgba(0,0,0,.48);
-  transform:rotate(-1deg); font-family:system-ui,sans-serif; overflow:hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 112%;
+  max-width: 510px;
+  background: #f4f8fb;
+  border: 1px solid #7ba4b7;
+  box-shadow: 0 14px 25px rgba(0,0,0,.45);
+  transform: scale(.78) rotate(-1deg);
+  font-family: system-ui,sans-serif;
+  overflow: hidden;
 }
-.notes-preview__browser { background:#132a40; color:#e3f4fb; display:flex; align-items:center; gap:6px; padding:10px 12px; font-size:.7rem; }
-.notes-preview__browser i { display:inline-block; width:8px; height:8px; border-radius:50%; background:#f06367; }
-.notes-preview__browser i:nth-child(2) { background:#f4ca61; }
-.notes-preview__browser i:nth-child(3) { background:#59d79e; }
-.notes-preview__browser span { margin-left:12px; font-family:ui-monospace,monospace; }
-.notes-preview__brand { background:linear-gradient(115deg,#071a2c,#123d5c); padding:12px 18px 14px; color:#fff; }
-.notes-preview__logo { font-weight:850; font-size:clamp(.94rem,1.6vw,1.2rem); letter-spacing:-.02em; }
-.notes-preview__logo em { color:#55dce3; font-style:normal; }
-.notes-preview__brand small { display:block; color:#b9dce7; font-size:.67rem; letter-spacing:.1em; }
-.notes-preview__nav { background:#fff; display:flex; justify-content:space-around; gap:5px; padding:8px 7px; font-size:.58rem; color:#153650; font-weight:750; border-bottom:2px solid #1ba48b; }
-.notes-preview__heading { margin:11px 15px 9px; font-size:.8rem; font-weight:850; color:#0b3154; }
-.notes-preview__tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; padding:0 13px 15px; }
-.notes-preview__tiles > div { min-width:0; overflow:hidden; background:#fff; border:1px solid #d4e4e9; }
-.notes-preview__tiles img { display:block; width:100%; height:75px; object-fit:cover; background:#dce7ed; }
-.notes-preview__tiles > div:nth-child(2) img { object-position:25% center; }
-.notes-preview__tiles b { display:block; font-size:.65rem; padding:5px 6px; color:#173a55; }
-.destination-card__art--solidcraft { background:#082c48; }
-.destination-card__art--solidcraft > img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; min-height:350px; }
+.notes-preview__browser {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  background: #132a40;
+  color: #e3f4fb;
+  font-size: .7rem;
+}
+.notes-preview__browser i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f06367;
+}
+.notes-preview__browser i:nth-child(2) { background: #f4ca61; }
+.notes-preview__browser i:nth-child(3) { background: #59d79e; }
+.notes-preview__browser span { margin-left: 12px; font-family: ui-monospace,monospace; }
+.notes-preview__brand { background: linear-gradient(115deg,#071a2c,#123d5c); padding: 9px 16px 10px; color: #fff; }
+.notes-preview__logo { font-weight: 850; font-size: clamp(.94rem,1.6vw,1.2rem); letter-spacing: -.02em; }
+.notes-preview__logo em { color: #55dce3; font-style: normal; }
+.notes-preview__brand small { display: block; color: #b9dce7; font-size: .64rem; letter-spacing: .1em; }
+.notes-preview__nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 7px;
+  background: #fff;
+  color: #153650;
+  font-size: .58rem;
+  font-weight: 750;
+  border-bottom: 2px solid #1ba48b;
+}
+.notes-preview__heading { margin: 7px 13px 6px; color: #0b3154; font-size: .78rem; font-weight: 850; }
+.notes-preview__tiles { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; padding: 0 12px 12px; }
+.notes-preview__tiles > div { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d4e4e9; }
+.notes-preview__tiles img { display: block; width: 100%; height: 64px; object-fit: cover; background: #dce7ed; }
+.notes-preview__tiles > div:nth-child(2) img { object-position: 25% center; }
+.notes-preview__tiles b { display: block; padding: 4px 6px; color: #173a55; font-size: .65rem; }
+.destination-card__art--solidcraft { background: #082c48; }
+.destination-card__art--solidcraft > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .cad-code {
-  position:absolute; top:4%; right:3%; width:51%; height:73%;
-  background:#15283a; border:1px solid #547389; border-radius:7px;
-  box-shadow:0 10px 30px rgba(0,0,0,.35); color:#a7f6ff; overflow:hidden;
-  font:clamp(.59rem,1.12vw,.76rem)/1.65 ui-monospace,Consolas,monospace;
+  position: absolute;
+  top: 4%;
+  right: 3%;
+  width: 48%;
+  height: 72%;
+  overflow: hidden;
+  background: #15283a;
+  border: 1px solid #547389;
+  border-radius: 6px;
+  box-shadow: 0 9px 22px rgba(0,0,0,.35);
+  color: #a7f6ff;
+  font: clamp(.56rem,.92vw,.72rem)/1.65 ui-monospace,Consolas,monospace;
 }
-.cad-code__bar { display:flex; align-items:center; gap:12px; color:#e0eff7; padding:5px 8px; background:#20394d; border-bottom:1px solid #3d6079; font-size:.85em; }
-.cad-code__dots { color:#60cead; white-space:nowrap; letter-spacing:2px; }
-.cad-code__body { display:flex; flex-direction:column; white-space:nowrap; padding:8px 11px; }
-.cad-code__body b { font-weight:500; color:#f3a5f5; }
-.cad-code__body em { color:#7fecf4; font-style:normal; }
-.cad-code__body strong { color:#f3cf70; font-weight:500; }
-@media(max-width:760px) {
-  .destination-card { grid-template-columns:1fr; }
-  .destination-card__art { min-height:260px; }
-  .destination-card__art--solidcraft > img { min-height:260px; max-height:320px; }
-  .cad-code { font-size:clamp(.63rem,2.4vw,.8rem); }
+.cad-code__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 7px;
+  color: #e0eff7;
+  background: #20394d;
+  border-bottom: 1px solid #3d6079;
+  font-size: .85em;
 }
-@media(max-width:480px) {
-  .destination-card__content { padding:23px 21px 25px; }
-  .destination-card h3 { font-size:1.75rem; }
-  .notes-preview__tiles img { height:66px; }
-  .notes-preview__nav { font-size:.52rem; }
-  .destination-card__art { min-height:225px; }
-  .destination-card__art--solidcraft > img { min-height:225px; }
-  .cad-code { height:72%; font-size:.56rem; }
-  .cad-code__body { padding:5px 7px; }
+.cad-code__dots { color: #60cead; white-space: nowrap; letter-spacing: 2px; }
+.cad-code__body { display: flex; flex-direction: column; padding: 6px 8px; white-space: nowrap; }
+.cad-code__body b { font-weight: 500; color: #f3a5f5; }
+.cad-code__body em { color: #7fecf4; font-style: normal; }
+.cad-code__body strong { font-weight: 500; color: #f3cf70; }
+@media (max-width:760px) {
+  .destination-card { grid-template-columns: 1fr; }
+  .destination-card__content { min-height: 205px; }
+  .destination-card__art { min-height: 180px; }
+  .notes-preview { transform: scale(.71) rotate(-1deg); }
 }
-
-.destination-card__heading-link { color:inherit; text-decoration:none; }
-.destination-card__heading-link:hover { color:#087c9b; }
-.destination-card__heading-link span { color:var(--green); font-size:.68em; vertical-align:.1em; }
-
-/* 2026-11-12: Compact, quieter overview and equally sized project panels. */
-.main-site > .section-heading--destinations { margin:0 0 13px; }
-.main-site > .section-heading--destinations h2 {
-  font-size:.78rem;
-  font-weight:800;
-  line-height:1.35;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  color:var(--green);
-}
-.primary-links { gap:18px; }
-.destination-card { min-height:315px; border-top-width:3px; }
-.destination-card__content { padding:18px 25px 17px; }
-.destination-card__tag { font-size:.66rem; margin-bottom:6px; }
-.destination-card h3 { font-size:clamp(1.5rem,2.4vw,1.9rem); margin-bottom:8px; }
-.destination-card__description { margin-bottom:12px; font-size:.9rem; line-height:1.5; }
-.destination-links a { min-height:49px; padding:7px 6px; gap:10px; }
-.destination-links strong { font-size:.91rem; }
-.destination-links small { font-size:.77rem; }
-.destination-links__icon { width:21px; font-size:1.17rem; }
-.destination-links__arrow { font-size:1.08rem; }
-.destination-card__art { min-height:315px; }
-.destination-card__art--solidcraft > img { min-height:315px; }
-.notes-preview__tiles img { height:68px; }
-@media(max-width:760px) {
-  .destination-card__art { min-height:225px; }
-  .destination-card__art--solidcraft > img { min-height:225px; max-height:260px; }
-}
-@media(max-width:480px) {
-  .destination-card__content { padding:18px 20px 19px; }
-  .destination-card__art { min-height:205px; }
-  .destination-card__art--solidcraft > img { min-height:205px; }
+@media (max-width:480px) {
+  .destination-card__content { min-height: 0; padding: 16px 18px 17px; }
+  .destination-card h3 { font-size: 1.45rem; }
+  .notes-cta { margin-top: 8px; }
+  .solidcraft-grid { grid-template-columns: 1fr; }
+  .solidcraft-grid a:first-child { border-right: none; }
+  .solidcraft-grid .solidcraft-grid__wide { grid-column: auto; }
+  .destination-card__art { min-height: 175px; }
+  .notes-preview { transform: scale(.66) rotate(-1deg); }
+  .cad-code { font-size: .57rem; }
 }
