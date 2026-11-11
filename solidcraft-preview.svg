@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380" role="img" aria-labelledby="title desc">
+  <title id="title">SolidCraft CAD model illustration</title>
+  <desc id="desc">An isometric CAD enclosure on a grid inside a technical drawing workspace.</desc>
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b5e6e9"/>
+      <stop offset="1" stop-color="#51a5be"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3c99b5"/>
+      <stop offset="1" stop-color="#1c618d"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#3b7897" stroke-width="1" opacity=".3"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="380" fill="#0a2c4b"/>
+  <rect x="30" y="24" width="540" height="330" fill="#0c3654" stroke="#4b89a0" stroke-width="1.5"/>
+  <path d="M30 59 H570" stroke="#4b89a0"/>
+  <circle cx="49" cy="42" r="4" fill="#5dccca"/>
+  <circle cx="63" cy="42" r="4" fill="#f2b566"/>
+  <circle cx="77" cy="42" r="4" fill="#67d19a"/>
+  <text x="100" y="46" fill="#c9eaf0" font-family="system-ui, sans-serif" font-size="12" font-weight="600">solidcraft / CAD workspace</text>
+  <rect x="31" y="60" width="538" height="293" fill="url(#grid)"/>
+  <path d="M88 308 L255 250 L470 309 M150 335 L325 276 L508 335" fill="none" stroke="#3f7791" stroke-width="1" opacity=".42"/>
+  <g stroke="#b0e4e9" stroke-linejoin="round" stroke-width="2">
+    <polygon points="157,160 340,104 477,161 290,218" fill="url(#surface)"/>
+    <polygon points="157,160 290,218 290,296 157,238" fill="url(#front)"/>
+    <polygon points="290,218 477,161 477,239 290,296" fill="#154b73"/>
+  </g>
+  <polygon points="231,164 342,131 404,157 292,190" fill="#174462" stroke="#8cd2df" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="245,165 343,136 390,156 292,185" fill="#0b2c48" stroke="#5d9db0" stroke-width="1"/>
+  <g stroke="#86c6d5" stroke-width="1.2" fill="#103853">
+    <ellipse cx="185" cy="157" rx="9" ry="4"/>
+    <ellipse cx="442" cy="169" rx="9" ry="4"/>
+    <ellipse cx="290" cy="203" rx="9" ry="4"/>
+    <ellipse cx="339" cy="119" rx="9" ry="4"/>
+  </g>
+  <g fill="#6dc4d4" opacity=".85">
+    <path d="M180 202 l82 35 v8 l-82-35 z"/>
+    <path d="M180 219 l82 35 v8 l-82-35 z"/>
+    <path d="M316 239 l126-39 v6 l-126 39 z"/>
+  </g>
+  <g fill="none" stroke-width="2" stroke-linecap="round">
+    <path d="M80 310 v-42" stroke="#6ec3f1"/>
+    <path d="M80 310 h42" stroke="#72d4b0"/>
+    <path d="M80 310 l-21 15" stroke="#f7bd73"/>
+  </g>
+  <g font-family="ui-monospace, monospace" font-size="12" font-weight="700">
+    <text x="80" y="259" fill="#81d6f7" text-anchor="middle">Z</text>
+    <text x="128" y="315" fill="#82dfbc">X</text>
+    <text x="49" y="337" fill="#f6c88c">Y</text>
+  </g>
+  <rect x="371" y="293" width="169" height="37" rx="3" fill="#08263e" stroke="#366c87"/>
+  <text x="385" y="309" fill="#9bdce8" font-family="ui-monospace, monospace" font-size="11">PARAMETRIC MODEL</text>
+  <text x="385" y="322" fill="#74baa9" font-family="ui-monospace, monospace" font-size="9">illustrative CAD view</text>
+</svg>
