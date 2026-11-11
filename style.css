@@ -88,114 +88,99 @@ body { background: #f2f5f6; }
 }
 
 
-/* Two full-width destinations: Technical Notes first, SolidCraft below. */
-.primary-links {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+
+/* Shared destination-card system: the two sections use one visual rhythm. */
+.primary-links { display:flex; flex-direction:column; gap:24px; }
+.destination-card {
+  display:grid;
+  grid-template-columns:minmax(0,54%) minmax(0,46%);
+  border:1px solid var(--line);
+  border-top:5px solid var(--green);
+  background:#fff;
+  min-height:365px;
+  overflow:hidden;
 }
-.primary-links .feature {
-  grid-template-columns: minmax(0,59%) minmax(0,41%);
-  min-height: 248px;
+.destination-card--solidcraft { border-top-color:#159dc0; }
+.destination-card__content { display:flex; flex-direction:column; min-width:0; padding:26px 30px 24px; }
+.destination-card__tag {
+  margin:0 0 10px; color:#187f6e;
+  font-size:.72rem; font-weight:800; letter-spacing:.09em;
 }
-.primary-links .feature__body { min-height: 0; }
-.primary-links .feature__art { min-height: 248px; }
-.solidcraft-card {
-  display: grid;
-  grid-template-columns: minmax(0,54%) minmax(0,46%);
-  min-height: 340px;
-  border: 1px solid var(--line);
-  border-top: 4px solid #37a9c7;
-  background: #fff;
+.destination-card--solidcraft .destination-card__tag { color:#087c9b; }
+.destination-card h3 { margin:0 0 12px; font-size:clamp(1.7rem,2.8vw,2.2rem); letter-spacing:-.045em; line-height:1.18; color:var(--navy); }
+.destination-card__description { margin:0 0 22px; font-size:.95rem; color:var(--muted); max-width:460px; }
+.destination-links { display:flex; flex-direction:column; margin-top:auto; border-top:1px solid var(--line); }
+.destination-links a {
+  display:flex; gap:12px; align-items:center; text-decoration:none;
+  padding:12px 8px; border-bottom:1px solid var(--line); min-height:60px;
 }
-.solidcraft-card__content {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
+.destination-links a:hover, .destination-links a:focus-visible { background:#f2f9f8; }
+.destination-links__icon { color:#178c77; font-size:1.35rem; font-weight:700; line-height:1; width:25px; text-align:center; }
+.destination-links__text { min-width:0; display:flex; flex-direction:column; flex:1; }
+.destination-links strong { font-size:.98rem; line-height:1.35; color:var(--navy); }
+.destination-links small { font-size:.82rem; color:var(--muted); line-height:1.35; }
+.destination-links__arrow { margin-left:auto; color:var(--green); font-size:1.25rem; }
+.destination-card__art { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; min-width:0; min-height:350px; }
+.destination-card__art--notes {
+  background: radial-gradient(ellipse at 70% 30%,#184b69 0,#082c48 62%,#041a30 100%);
 }
-.solidcraft-card__intro { padding: 22px 32px 14px; }
-.solidcraft-card__intro h3 {
-  font-size: clamp(1.32rem,2.15vw,1.76rem);
-  letter-spacing: -.035em;
-  line-height: 1.18;
-  margin: 10px 0 9px;
+.destination-card__art--notes::before {
+  content:""; position:absolute; inset:0; opacity:.3; pointer-events:none;
+  background:url('header-circuit.svg') center/cover no-repeat;
 }
-.solidcraft-card__intro p {
-  margin: 0;
-  color: var(--muted);
-  font-size: .92rem;
+.notes-preview {
+  position:relative; width:91%; max-width:460px;
+  background:#f4f8fb; border:1px solid #7ba4b7;
+  box-shadow:0 18px 35px rgba(0,0,0,.48);
+  transform:rotate(-1deg); font-family:system-ui,sans-serif; overflow:hidden;
 }
-.solidcraft-links {
-  display: flex;
-  flex-direction: column;
-  padding: 0 24px;
+.notes-preview__browser { background:#132a40; color:#e3f4fb; display:flex; align-items:center; gap:6px; padding:10px 12px; font-size:.7rem; }
+.notes-preview__browser i { display:inline-block; width:8px; height:8px; border-radius:50%; background:#f06367; }
+.notes-preview__browser i:nth-child(2) { background:#f4ca61; }
+.notes-preview__browser i:nth-child(3) { background:#59d79e; }
+.notes-preview__browser span { margin-left:12px; font-family:ui-monospace,monospace; }
+.notes-preview__brand { background:linear-gradient(115deg,#071a2c,#123d5c); padding:12px 18px 14px; color:#fff; }
+.notes-preview__logo { font-weight:850; font-size:clamp(.94rem,1.6vw,1.2rem); letter-spacing:-.02em; }
+.notes-preview__logo em { color:#55dce3; font-style:normal; }
+.notes-preview__brand small { display:block; color:#b9dce7; font-size:.67rem; letter-spacing:.1em; }
+.notes-preview__nav { background:#fff; display:flex; justify-content:space-around; gap:5px; padding:8px 7px; font-size:.58rem; color:#153650; font-weight:750; border-bottom:2px solid #1ba48b; }
+.notes-preview__heading { margin:11px 15px 9px; font-size:.8rem; font-weight:850; color:#0b3154; }
+.notes-preview__tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; padding:0 13px 15px; }
+.notes-preview__tiles > div { min-width:0; overflow:hidden; background:#fff; border:1px solid #d4e4e9; }
+.notes-preview__tiles img { display:block; width:100%; height:75px; object-fit:cover; background:#dce7ed; }
+.notes-preview__tiles > div:nth-child(2) img { object-position:25% center; }
+.notes-preview__tiles b { display:block; font-size:.65rem; padding:5px 6px; color:#173a55; }
+.destination-card__art--solidcraft { background:#082c48; }
+.destination-card__art--solidcraft > img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; min-height:350px; }
+.cad-code {
+  position:absolute; top:4%; right:3%; width:51%; height:73%;
+  background:#15283a; border:1px solid #547389; border-radius:7px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35); color:#a7f6ff; overflow:hidden;
+  font:clamp(.59rem,1.12vw,.76rem)/1.65 ui-monospace,Consolas,monospace;
 }
-.solidcraft-links a {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0 10px;
-  padding: 9px 8px;
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-}
-.solidcraft-links a:first-child { border-top: 1px solid var(--line); }
-.solidcraft-links a:hover, .solidcraft-links a:focus-visible { background: #f2f9f8; }
-.solidcraft-links strong { font-size: .93rem; color: var(--navy); }
-.solidcraft-links small { grid-column: 1; font-size: .8rem; color: var(--muted); }
-.solidcraft-links a span {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
-  color: var(--green);
-  font-size: 1.2rem;
-}
-.solidcraft-card__pages {
-  margin: auto 32px 22px;
-  padding-top: 12px;
-  font-weight: 750;
-  font-size: .87rem;
-  color: #187f6e;
-  text-decoration: none;
-}
-.solidcraft-card__pages:hover { text-decoration: underline; }
-.solidcraft-card__visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 340px;
-  padding: 0;
-  overflow: hidden;
-  background: linear-gradient(145deg,#102f48,#061e36);
-}
-.solidcraft-card__visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background: linear-gradient(90deg, rgba(255,255,255,.08), transparent 18%, rgba(6,22,39,.12));
-}
-.solidcraft-card__visual img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
-}
+.cad-code__bar { display:flex; align-items:center; gap:12px; color:#e0eff7; padding:5px 8px; background:#20394d; border-bottom:1px solid #3d6079; font-size:.85em; }
+.cad-code__dots { color:#60cead; white-space:nowrap; letter-spacing:2px; }
+.cad-code__body { display:flex; flex-direction:column; white-space:nowrap; padding:8px 11px; }
+.cad-code__body b { font-weight:500; color:#f3a5f5; }
+.cad-code__body em { color:#7fecf4; font-style:normal; }
+.cad-code__body strong { color:#f3cf70; font-weight:500; }
 @media(max-width:760px) {
-  .primary-links .feature, .solidcraft-card { grid-template-columns: 1fr; }
-  .primary-links .feature__art { min-height: 175px; }
-  .solidcraft-card__visual { min-height: 180px; }
+  .destination-card { grid-template-columns:1fr; }
+  .destination-card__art { min-height:260px; }
+  .destination-card__art--solidcraft > img { min-height:260px; max-height:320px; }
+  .cad-code { font-size:clamp(.63rem,2.4vw,.8rem); }
 }
 @media(max-width:480px) {
-  .solidcraft-card__intro { padding: 23px 24px 14px; }
-  .solidcraft-links { padding: 0 16px; }
-  .solidcraft-card__pages { margin-left: 24px; margin-right: 24px; }
+  .destination-card__content { padding:23px 21px 25px; }
+  .destination-card h3 { font-size:1.75rem; }
+  .notes-preview__tiles img { height:66px; }
+  .notes-preview__nav { font-size:.52rem; }
+  .destination-card__art { min-height:225px; }
+  .destination-card__art--solidcraft > img { min-height:225px; }
+  .cad-code { height:72%; font-size:.56rem; }
+  .cad-code__body { padding:5px 7px; }
 }
 
-/* Give the Notes preview a little more presence without changing its contents. */
-.primary-links .feature__art .window {
-  max-width: 320px;
-  box-shadow: 0 18px 30px rgba(0,0,0,.32);
-}
+.destination-card__heading-link { color:inherit; text-decoration:none; }
+.destination-card__heading-link:hover { color:#087c9b; }
+.destination-card__heading-link span { color:var(--green); font-size:.68em; vertical-align:.1em; }

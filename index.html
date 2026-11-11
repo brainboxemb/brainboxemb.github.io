@@ -37,58 +37,56 @@
         <h2 id="destinations-heading">Projects &amp; Technical Notes</h2>
       </div>
       <div class="primary-links">
-      <a class="feature" href="/notes/" aria-label="Continue to Technical Notes">
-        <div class="feature__body">
-          <span class="feature__tag"><span class="mini-dot"></span> CURRENT WEBSITE · HUGO</span>
-          <h3>Projects, knowledge and discoveries.</h3>
-          <p>Explore my ongoing projects, technical reference notes and daily finds on the current website.</p>
-          <span class="feature__action">Continue to Technical Notes <span aria-hidden="true">→</span></span>
-        </div>
-        <div class="feature__art" aria-hidden="true">
-          <div class="window">
-            <span class="window__dots"><i></i><i></i><i></i></span>
-            <span class="window__title">brainboxemb / notes</span>
-            <div class="window__content">
-              <div class="window__nav"><span>Projects</span><span>Knowledge Base</span><span>Daily</span></div>
-              <div class="window__lines"><span></span><span></span><span></span></div>
-              <div class="window__tiles"><i></i><i></i></div>
+        <section class="destination-card destination-card--notes" aria-labelledby="notes-heading">
+          <div class="destination-card__content">
+            <p class="destination-card__tag">TECHNICAL NOTES · PROJECTS · KNOWLEDGE</p>
+            <h3 id="notes-heading"><a class="destination-card__heading-link" href="/notes/">BrainboxEmb Notes <span aria-hidden="true">↗</span></a></h3>
+            <p class="destination-card__description">Projects, knowledge base, daily finds and practical technical articles about CAD, electronics, software and workshop projects.</p>
+            <nav class="destination-links" aria-label="Technical Notes sections">
+              <a href="/notes/projects/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>Projects</strong><small>Builds and technical experiments</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+              <a href="/notes/knowledge/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>Knowledge Base</strong><small>Reference material and practical guides</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+              <a href="/notes/daily/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>Daily discoveries</strong><small>Ideas, articles and useful finds</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+            </nav>
+          </div>
+          <div class="destination-card__art destination-card__art--notes" aria-label="Preview of technical projects on BrainboxEmb Notes">
+            <div class="notes-preview" aria-hidden="true">
+              <div class="notes-preview__browser"><i></i><i></i><i></i><span>brainboxemb / notes</span></div>
+              <div class="notes-preview__brand"><div class="notes-preview__logo">BrainboxEmb <em>Notes</em></div><small>think · build · embed</small></div>
+              <div class="notes-preview__nav"><span>Projects</span><span>Knowledge Base</span><span>Daily</span><span>Articles</span></div>
+              <p class="notes-preview__heading">Active Projects</p>
+              <div class="notes-preview__tiles">
+                <div><img src="/notes/projects/2026/001-hub75-display/_image/cover.jpg" alt=""><b>HUB75</b></div>
+                <div><img src="solidcraft-cad.webp" alt=""><b>CAD</b></div>
+                <div><img src="/notes/knowledge/diy-workshop/workshop-furniture/diy-workbenches/mft-variants/youtube-videos/mft-workbench-hok8ncyfaga/images/youtube-mft-workbench-hok8ncyfaga-w320.webp" alt=""><b>Workshop</b></div>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-      <section class="solidcraft-card" aria-labelledby="solidcraft-heading">
-        <div class="solidcraft-card__content">
-          <div class="solidcraft-card__intro">
-          <span class="feature__tag">CAD · PYTHON · EXPERIMENTS</span>
-          <h3 id="solidcraft-heading">SolidCraft</h3>
-          <p>Python tools and CAD models for experiments with the SolidCraft API.</p>
-        </div>
-        <nav class="solidcraft-links" aria-label="SolidCraft repositories">
-          <a href="https://github.com/brainboxemb/lib.py.solidcraft.forge">
-            <strong>Python Forge library</strong>
-            <small>Python-based model generation.</small>
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://github.com/brainboxemb/lib.py.solidcraft.cmd">
-            <strong>Python command library</strong>
-            <small>Command interface — repository started.</small>
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://github.com/brainboxemb/2026-011-02.cad.solidcraft">
-            <strong>CAD models</strong>
-            <small>SolidCraft model files and examples.</small>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </nav>
-        <a class="solidcraft-card__pages" href="/2026-011-02.cad.solidcraft/">
-          Explore the CAD project pages <span aria-hidden="true">→</span>
-        </a>
-        </div>
-        <div class="solidcraft-card__visual">
-          <img src="solidcraft-cad.webp" width="500" height="291"
-               alt="Concept illustration of a CAD corner bracket, dimension guides, wireframe and Python scripting." loading="lazy">
-        </div>
-      </section>
+        </section>
+        <section class="destination-card destination-card--solidcraft" aria-labelledby="solidcraft-heading">
+          <div class="destination-card__content">
+            <p class="destination-card__tag">CAD · PYTHON · EXPERIMENTS</p>
+            <h3 id="solidcraft-heading">SolidCraft</h3>
+            <p class="destination-card__description">Python tools and CAD models for experiments with the SolidCraft API.</p>
+            <nav class="destination-links" aria-label="SolidCraft project websites">
+              <a href="/lib.py.solidcraft.forge/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>SolidCraft Forge</strong><small>Python library guide and examples</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+              <a href="/lib.py.solidcraft.cmd/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>SolidCraft Commands</strong><small>Command library overview and examples</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+              <a href="/2026-011-02.cad.solidcraft/"><span class="destination-links__icon" aria-hidden="true">↗</span><span class="destination-links__text"><strong>CAD Project Pages</strong><small>Models, renders and experiments</small></span><span class="destination-links__arrow" aria-hidden="true">→</span></a>
+            </nav>
+          </div>
+          <div class="destination-card__art destination-card__art--solidcraft" aria-label="Concept art of a CAD corner bracket, its dimensions and a Python definition">
+            <img src="solidcraft-cad.webp" width="500" height="291" alt="" loading="lazy">
+            <div class="cad-code" aria-hidden="true">
+              <div class="cad-code__bar"><span class="cad-code__dots">● ● ●</span><span>bracket.py</span></div>
+              <div class="cad-code__body">
+                <span><b>class</b> <em>Bracket</em>:</span>
+                <span> &nbsp; width = <strong>60</strong></span>
+                <span> &nbsp; thickness = <strong>6</strong></span>
+                <span> &nbsp; <b>def</b> <em>build</em>(self):</span>
+                <span> &nbsp;&nbsp;&nbsp; ...</span>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
